@@ -17,7 +17,7 @@ const timeline = [
       id: 'military-2022',
       year: '2022',
       event: 'Full-Stack Development in the Military',
-      description: 'Started my military service in late 2022, i was positioned in my military unit for 3 years, where I advanced my technical skills and collaborated with multidisciplinary teams. I was responsible for developing and maintaining secure internal tools and full-stack applications under strict protocols, delivering high-impact solutions in a high-security environment.',
+      description: 'Started my military service in late 2022. I served in my unit for 3 years, where I advanced my technical skills and collaborated with multidisciplinary teams. I was responsible for developing and maintaining secure internal tools and full-stack applications under strict protocols, delivering high-impact solutions in a high-security environment.',
       icon: <Shield size={24} />,
       color: 'from-emerald-500 to-teal-600'
     },
