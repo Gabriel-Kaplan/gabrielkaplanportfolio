@@ -167,13 +167,6 @@ export default function ProjectsSection() {
                       boxShadow: "0 15px 30px -10px rgba(0, 0, 0, 0.5)"
                     }}
                     transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                    onClick={() => {
-                      const url = project.links[0]?.url;
-                      if (url && url !== "#") {
-                        window.open(url, "_blank");
-                      }
-                    }}
-                    style={{ cursor: "pointer" }}
                   >
 
                   {/* Glass reflection effect */}
@@ -216,12 +209,12 @@ export default function ProjectsSection() {
                     {project.title}
                   </motion.h4>
                   
-                  <p className="text-gray-300 text-sm mb-4 line-clamp-3 md:line-clamp-none">
+                  <p className="text-gray-300 text-sm mb-4 flex-grow">
                     {project.description}
                   </p>
                   
-                  {/* Highlights section - explicitly set to be visible and position relative */}
-                  <div className="flex flex-wrap gap-2 mt-auto mb-8 relative z-10">
+                  {/* Highlights section */}
+                  <div className="flex flex-wrap gap-2 mb-4 relative z-10">
                     {project.highlights.map((highlight, i) => (
                       <span 
                         key={i} 
@@ -232,14 +225,30 @@ export default function ProjectsSection() {
                     ))}
                   </div>
                   
-                  <motion.div
-                    className="absolute bottom-4 right-4 p-2 rounded-full text-white opacity-0 group-hover:opacity-100"
-                    initial={{ scale: 0 }}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 25 }}
-                  >
-                    <ArrowUpRight size={16} />
-                  </motion.div>
+                  {/* View Project Button - only show if project has a valid URL */}
+                  {project.links[0]?.url && project.links[0].url !== "#" && (
+                    <motion.button
+                      className="mt-5 w-1/2 py-3 px-4 bg-white/10 hover:bg-white/20 border border-white/20 rounded-2xl text-white font-medium text-sm transition-all duration-200 flex items-center justify-center gap-2 group/btn"
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => {
+                        const url = project.links[0]?.url;
+                        if (url && url !== "#") {
+                          window.open(url, "_blank");
+                        }
+                      }}
+                    >
+                      View Project
+                      <ArrowUpRight size={16} className="group-hover/btn:translate-x-1 group-group/btn:-translate-y-1 transition-transform" />
+                    </motion.button>
+                  )}
+                  
+                  {/* Coming Soon message for projects without valid URLs */}
+                  {(!project.links[0]?.url || project.links[0].url === "#") && (
+                    <div className="mt-5 w-full py-3 px-4 bg-white/5 border border-white/10 rounded-2xl text-gray-400 font-medium text-sm text-center">
+                      Coming Soon
+                    </div>
+                  )}
                 </motion.div>
               </motion.div>
             );

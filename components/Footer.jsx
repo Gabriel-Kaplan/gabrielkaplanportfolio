@@ -99,12 +99,13 @@ export default function Footer() {
             <p className="text-gray-400 mb-2">gabrielkappy@gmail.com</p>
             <p className="text-gray-400 mb-6">Ra&apos;anana, Israel</p>
             
-            <a 
-              href="#contact" 
-              className="inline-block text-white font-medium hover:text-gray-300 transition-colors border-b border-white/30 pb-1"
-            >
-              Get in touch
-            </a>
+           <a 
+          href="mailto:gabrielkappy@gmail.com" 
+          className="inline-block text-white font-medium hover:text-gray-300 transition-colors border-b border-white/30 pb-1"
+        >
+          Get in touch
+        </a>
+
           </motion.div>
         </div>
         
