@@ -89,50 +89,7 @@ export default function ProjectsSection() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-    >
-      {/* Animated background gradient - black and white */}
-      <div 
-        className="absolute inset-0 bg-black z-0"
-        style={{
-          backgroundPosition: `${mousePosition.x / 50}px ${mousePosition.y / 50}px`
-        }}
-      />
-      
-      {/* Floating particles - Only rendered client-side */}
-      {isMounted && windowSize.width > 0 && [...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full bg-white/40 z-0"
-          initial={{
-            x: Math.random() * windowSize.width,
-            y: Math.random() * windowSize.height,
-            scale: Math.random() * 0.5 + 0.5,
-          }}
-          animate={{
-            x: [
-              Math.random() * windowSize.width,
-              Math.random() * windowSize.width,
-              Math.random() * windowSize.width,
-            ],
-            y: [
-              Math.random() * windowSize.height,
-              Math.random() * windowSize.height,
-              Math.random() * windowSize.height,
-            ],
-          }}
-          transition={{
-            duration: 20 + Math.random() * 30,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{
-            width: `${Math.random() * 10 + 5}px`,
-            height: `${Math.random() * 10 + 5}px`,
-            opacity: Math.random() * 0.5 + 0.1,
-          }}
-        />
-      ))}
-      
+    > 
       {/* Title section with increased padding */}
       <div className="mb-16 z-10 relative">
         <motion.div

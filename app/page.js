@@ -256,7 +256,7 @@ const handleNavigation = (sectionName) => {
               transition={{ duration: 0.3 }}
             >
               <motion.div 
-                className="absolute inset-0 bg-gradient-to-br from-slate-900 to-black"
+                className="absolute inset-0 bg-gradient-to-br from-slate-950 to-slate-900"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}

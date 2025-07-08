@@ -50,49 +50,6 @@ export default function TimelineSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Animated background gradient */}
-      <div 
-        className="absolute inset-0 bg-black z-0"
-        style={{
-          backgroundPosition: `${mousePosition.x / 50}px ${mousePosition.y / 50}px`
-        }}
-      />
-      
-       {/* Floating particles */}
-       {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full bg-white/40 z-0"
-          initial={{
-            x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-            y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-            scale: Math.random() * 0.5 + 0.5,
-          }}
-          animate={{
-            x: [
-              Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-              Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-              Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-            ],
-            y: [
-              Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-              Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-              Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
-            ],
-          }}
-          transition={{
-            duration: 20 + Math.random() * 30,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{
-            width: `${Math.random() * 10 + 5}px`,
-            height: `${Math.random() * 10 + 5}px`,
-            opacity: Math.random() * 0.5 + 0.1,
-          }}
-        />
-      ))}
-      
       {/* Title section */}
       <div className="mb-16 z-10 relative">
         <motion.div

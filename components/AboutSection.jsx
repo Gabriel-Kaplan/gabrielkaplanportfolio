@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { Code, Sparkles, Globe, BookOpen, Rocket, Layers } from 'lucide-react';
 
 export default function AboutSection() {
+  const [windowSize, setWindowSize] = useState({ width: 1200, height: 800 }); // Default fallback values
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   
   useEffect(() => {
@@ -15,6 +16,18 @@ export default function AboutSection() {
     window.addEventListener('mousemove', updateMousePosition);
     return () => window.removeEventListener('mousemove', updateMousePosition);
   }, []);
+  useEffect(() => {
+  const handleResize = () => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight
+    });
+  };
+
+  handleResize();
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
   // Career highlights with icons
   const highlights = [
@@ -47,84 +60,6 @@ export default function AboutSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Animated background gradient - black and white */}
-      <div 
-        className="absolute inset-0 bg-black z-0"
-        style={{
-          backgroundPosition: `${mousePosition.x / 50}px ${mousePosition.y / 50}px`
-        }}
-      />
-      
-      {/* Floating particles */}
-      {[...Array(15)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full bg-white/5 z-0"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            scale: Math.random() * 0.5 + 0.5,
-          }}
-          animate={{
-            x: [
-              Math.random() * window.innerWidth,
-              Math.random() * window.innerWidth,
-              Math.random() * window.innerWidth,
-            ],
-            y: [
-              Math.random() * window.innerHeight,
-              Math.random() * window.innerHeight,
-              Math.random() * window.innerHeight,
-            ],
-          }}
-          transition={{
-            duration: 20 + Math.random() * 30,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{
-            width: `${Math.random() * 10 + 5}px`,
-            height: `${Math.random() * 10 + 5}px`,
-            opacity: Math.random() * 0.5 + 0.1,
-          }}
-        />
-      ))}
-      
-      {/* Abstract lines in background */}
-      {/* Abstract lines in background */}
-     {/* <div className="absolute inset-0 z-0 opacity-10">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={`line-${i}`}
-            className="absolute h-px bg-white"
-            style={{
-              top: `${(i + 1) * 15}%`,
-              left: 0,
-              right: 0,
-              transformOrigin: 'left'
-            }}
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 2, delay: i * 0.2 }}
-          />
-        ))}
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={`vert-line-${i}`}
-            className="absolute w-px bg-white"
-            style={{
-              left: `${(i + 1) * 15}%`,
-              top: 0,
-              bottom: 0,
-              transformOrigin: 'top'
-            }}
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            transition={{ duration: 2, delay: i * 0.2 }}
-          />
-        ))}
-      </div>*/}
-      
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* Left column - Profile content */}

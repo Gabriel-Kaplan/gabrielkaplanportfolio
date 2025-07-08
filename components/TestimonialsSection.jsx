@@ -43,85 +43,7 @@ export default function TestimonialsSection() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
     >
-      {/* Animated background gradient */}
-      <div 
-        className="absolute inset-0 bg-black z-0"
-        style={{
-          backgroundPosition: `${mousePosition.x / 50}px ${mousePosition.y / 50}px`
-        }}
-      />
-      
-      {/* Floating particles like in projects section */}
-      {/* Floating particles */}
-      {[...Array(20)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute rounded-full bg-white/40 z-0"
-          initial={{
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            scale: Math.random() * 0.5 + 0.5,
-          }}
-          animate={{
-            x: [
-              Math.random() * window.innerWidth,
-              Math.random() * window.innerWidth,
-              Math.random() * window.innerWidth,
-            ],
-            y: [
-              Math.random() * window.innerHeight,
-              Math.random() * window.innerHeight,
-              Math.random() * window.innerHeight,
-            ],
-          }}
-          transition={{
-            duration: 20 + Math.random() * 30,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          style={{
-            width: `${Math.random() * 10 + 5}px`,
-            height: `${Math.random() * 10 + 5}px`,
-            opacity: Math.random() * 0.5 + 0.1,
-          }}
-        />
-      ))}
-      
-      {/* Abstract lines in background */}
-     {/* <div className="absolute inset-0 z-0 opacity-10">
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={`line-${i}`}
-            className="absolute h-px bg-white"
-            style={{
-              top: `${(i + 1) * 15}%`,
-              left: 0,
-              right: 0,
-              transformOrigin: 'left'
-            }}
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 2, delay: i * 0.2 }}
-          />
-        ))}
-        {[...Array(5)].map((_, i) => (
-          <motion.div
-            key={`vert-line-${i}`}
-            className="absolute w-px bg-white"
-            style={{
-              left: `${(i + 1) * 15}%`,
-              top: 0,
-              bottom: 0,
-              transformOrigin: 'top'
-            }}
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            transition={{ duration: 2, delay: i * 0.2 }}
-          />
-        ))}
-      </div>*/}
-      
-      
+ 
       {/* Title section */}
       <div className="mb-16 z-10 relative">
         <motion.div
@@ -234,7 +156,7 @@ export default function TestimonialsSection() {
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.5 }}
                     >
-                      <div className="bg-gradient-to-r from-blue-500 to-purple-500 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg">
+                      <div className="bg-slate-950 border-2 border-slate-700 rounded-full w-12 h-12 flex items-center justify-center text-white font-bold text-lg">
                       {testimonial.name.split(' ').map(n => n[0]).join('').toUpperCase()}
                       </div>
                       
