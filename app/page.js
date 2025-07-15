@@ -89,7 +89,6 @@ const handleNavigation = (sectionName) => {
     { name: 'Projects', icon: <Folder size={20} className="text-indigo-400" />, description: "See my work" },
     { name: 'Skills', icon: <Code size={20} className="text-emerald-400" />, description: "My technical expertise" },
     { name: 'Timeline', icon: <Clock size={20} className="text-amber-400" />, description: "My journey" },
-    { name: 'Testimonials', icon: <MessageCircle size={20} className="text-rose-400" />, description: "What others say" },
     {name: 'Contact Me', icon: <Phone size={20} className="text-orange-400" />, description: "Send me an email :)"}
   ];
 
@@ -113,6 +112,7 @@ const handleNavigation = (sectionName) => {
 
   return (
     <div className="min-h-screen bg-white text-black dark:bg-transparent dark:text-white">
+      {/* name: 'Testimonials', icon: <MessageCircle size={20} className="text-rose-400" />, description: "What others say" },*/}
       <Head>
         <title>Gabriel Kaplan | Full-Stack Developer & Entrepreneur</title>
         <meta name="description" content="Expert full-stack developer specializing in React, Next.js and cloud solutions. Transform your digital presence with cutting-edge web applications." />
@@ -330,9 +330,9 @@ const handleNavigation = (sectionName) => {
         <ProjectSection />
       </section>
       
-      <section id="testimonials">
+      {/*<section id="testimonials">
         <TestimonialsSection />
-      </section>
+      </section>*/}
       
       <section id="skills">
         <SkillsSection />

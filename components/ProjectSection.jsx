@@ -28,16 +28,16 @@ const projects = [
     highlights: ["TypeScript", "VAPI", "Google Firebase", "Next.js"]
   },  
   {
-    title: "CleverYou | AI E-Learning Platform",
-    description: "CleverYou is a next-generation AI-powered Learning Management System (LMS) that helps schools, universities, and training centers deliver practical, school- and career-focused learning—preparing students with the skills, hands-on experience, and confidence they need to succeed both in school and in the modern workforce. (Currently in development)",
-    size: "large",
-    category: "Web Development",
-    links: [
-      { type: "live", url: "#", icon: <Globe size={16} /> }
-    ],
-    icon: <Code size={24} />,
-    highlights: ["Next.js", "VAPI" , "TypeScript","Clerk", "Junie AI", "Sentry", "Stripe"]
-  },
+  title: "CleverYou | AI E-Learning Platform",
+  description: "CleverYou is a next-generation AI-powered Learning Management System (LMS) that integrates multiple AI APIs to create comprehensive learning experiences. It uses VAPI for interactive voice-based lessons and AI tutor communication, while leveraging Google AI APIs or Junie AI to generate personalized questions, assessments, and learning content. The platform helps schools, universities, and training centers deliver practical, school- and career-focused learning—preparing students with the skills, hands-on experience, and confidence they need to succeed both in school and in the modern workforce. (Currently in development)",
+  size: "large",
+  category: "Web Development",
+  links: [
+    { type: "live", url: "#", icon: <Globe size={16} /> }
+  ],
+  icon: <Code size={24} />,
+  highlights: ["Next.js", "VAPI", "TypeScript", "Clerk", "Junie AI", "Sentry", "Stripe"]
+},
   {
     title: "Chedder | High Powered Screen Recorder",
     description: "Chedder makes screen recording smarter with built-in transcription, highlights, and summaries—perfect for tutorials, meetings, and presentations. (In BETA v1)",
